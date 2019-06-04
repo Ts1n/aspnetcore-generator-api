@@ -14,7 +14,7 @@ RUN dotnet restore tests/tests.csproj
 COPY . .
 
 # Test
-RUN dotnet test --verbosity normal tests/tests.csproj
+RUN dotnet test --logger:"console;verbosity=normal" tests/tests.csproj
 
 # Publish
 RUN dotnet publish api/api.csproj -o /publish
